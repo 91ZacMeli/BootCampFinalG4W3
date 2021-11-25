@@ -6,9 +6,9 @@ import com.mercadolibre.demo.model.InboundOrder;
 import com.mercadolibre.demo.model.Product;
 import com.mercadolibre.demo.repository.InboundOrderRepository;
 import com.mercadolibre.demo.repository.ProductRepository;
+import com.mercadolibre.demo.repository.SalesAdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
 import java.util.*;

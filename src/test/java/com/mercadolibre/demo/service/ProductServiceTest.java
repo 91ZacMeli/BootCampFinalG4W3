@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.mercadolibre.demo.dto.response.DueDateDTO;
 import com.mercadolibre.demo.model.*;
 import com.mercadolibre.demo.repository.InboundOrderRepository;
+import com.mercadolibre.demo.repository.ProductRepository;
 import org.mockito.Mockito;
 
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import com.mercadolibre.demo.dto.ProductDTO;
-import com.mercadolibre.demo.repository.ProductRepository;
+import com.mercadolibre.demo.repository.SalesAdRepository;
 
 class ProductServiceTest {
     ProductRepository mockProduct = Mockito.mock(ProductRepository.class);

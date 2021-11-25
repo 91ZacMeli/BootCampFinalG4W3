@@ -22,7 +22,7 @@ public class SalesAdController implements SecurityController {
     private SalesAdService salesAdService;
 
     @PostMapping(value = "/save")
-    public ResponseEntity<SalesAd> saveSalesAd(@Valid @RequestBody SalesAdDTO dto) throws Exception {
+    public ResponseEntity<SalesAd> saveSalesAd(@Valid @RequestBody SalesAdDTO dto) {
     	try {
             SalesAd salesAd = salesAdService.save(dto);
             return new ResponseEntity<>(salesAd, HttpStatus.CREATED);
