@@ -9,6 +9,7 @@ import com.mercadolibre.demo.dto.response.SalesAdDTOResponse;
 import com.mercadolibre.demo.model.CuponsBlackFriday;
 import com.mercadolibre.demo.model.DiscountBlackFriday;
 import com.mercadolibre.demo.repository.DiscountBlackFridayRepository;
+import com.mercadolibre.demo.repository.SellerRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -303,89 +304,6 @@ public class DiscountBlackFridayServiceTest {
 
     }
 
-    @Test
-    void updateDiscontBlackFridayTest() throws Exception {
-
-        DiscountBlackFriday discountBlackFriday = new DiscountBlackFriday();
-        List<SalesAdDTOResponse> listBySeller = new ArrayList<>();
-
-        SalesAdDTOResponse salesAdDTOResponse = new SalesAdDTOResponse();
-        salesAdDTOResponse.setCategoria("FRIOS");
-        salesAdDTOResponse.setValueItem(15.0);
-        salesAdDTOResponse.setProductName("Mortadela");
-        salesAdDTOResponse.setSellerName("Roberto");
-
-        SalesAdDTOResponse salesAdDTOResponse1 = new SalesAdDTOResponse();
-        salesAdDTOResponse1.setCategoria("CONGELADOS");
-        salesAdDTOResponse1.setValueItem(10.0);
-        salesAdDTOResponse1.setProductName("Filé de Sardinha");
-        salesAdDTOResponse1.setSellerName("RoGerio");
-
-        SalesAdDTOResponse salesAdDTOResponse2 = new SalesAdDTOResponse();
-        salesAdDTOResponse2.setCategoria("AMBIENTE");
-        salesAdDTOResponse2.setValueItem(18.0);
-        salesAdDTOResponse2.setProductName("Quiabo");
-        salesAdDTOResponse2.setSellerName("Rodrigo");
-
-        listBySeller.add(salesAdDTOResponse);
-        listBySeller.add(salesAdDTOResponse1);
-        listBySeller.add(salesAdDTOResponse2);
-
-        DiscountBlackFridayDTO dto = new DiscountBlackFridayDTO(FRIOSBLACK, "10%", 1L, listBySeller);
-
-        Mockito.when(mockDiscountBlackFridayRepository.findById(Mockito.any(Long.class))).thenReturn(Optional.of(discountBlackFriday));
-        Mockito.when(mockDiscountBlackFridayRepository.saveAndFlush(Mockito.any(DiscountBlackFriday.class))).thenReturn(discountBlackFriday);
-
-        discountBlackFriday = discountBlackFridayService.convertDiscountBlackFridayDTO(dto);
-        discountBlackFriday.setIdDiscontBlackFriday(1L);
-        discountBlackFridayService.updateDiscontBlackFriday(dto, 1L);
-
-        assertNotNull(discountBlackFriday);
-        assertEquals(discountBlackFriday.getCupomValue(),"10%");
-    }
-
-    @Test
-    void updateDiscontBlackFridayNoSuccessTest() throws Exception {
-
-        DiscountBlackFriday discountBlackFriday = new DiscountBlackFriday();
-        List<SalesAdDTOResponse> listBySeller = new ArrayList<>();
-
-        SalesAdDTOResponse salesAdDTOResponse = new SalesAdDTOResponse();
-        salesAdDTOResponse.setCategoria("FRIOS");
-        salesAdDTOResponse.setValueItem(15.0);
-        salesAdDTOResponse.setProductName("Mortadela");
-        salesAdDTOResponse.setSellerName("Roberto");
-
-        SalesAdDTOResponse salesAdDTOResponse1 = new SalesAdDTOResponse();
-        salesAdDTOResponse1.setCategoria("CONGELADOS");
-        salesAdDTOResponse1.setValueItem(10.0);
-        salesAdDTOResponse1.setProductName("Filé de Sardinha");
-        salesAdDTOResponse1.setSellerName("RoGerio");
-
-        SalesAdDTOResponse salesAdDTOResponse2 = new SalesAdDTOResponse();
-        salesAdDTOResponse2.setCategoria("AMBIENTE");
-        salesAdDTOResponse2.setValueItem(18.0);
-        salesAdDTOResponse2.setProductName("Quiabo");
-        salesAdDTOResponse2.setSellerName("Rodrigo");
-
-        listBySeller.add(salesAdDTOResponse);
-        listBySeller.add(salesAdDTOResponse1);
-        listBySeller.add(salesAdDTOResponse2);
-
-        DiscountBlackFridayDTO dto = new DiscountBlackFridayDTO(FRIOSBLACK, "10%", 1L, listBySeller);
-
-        Mockito.when(mockDiscountBlackFridayRepository.findById(1L)).thenReturn(Optional.of(discountBlackFriday));
-        Mockito.when(mockDiscountBlackFridayRepository.saveAndFlush(Mockito.any(DiscountBlackFriday.class))).thenReturn(discountBlackFriday);
-
-        discountBlackFriday = discountBlackFridayService.convertDiscountBlackFridayDTO(dto);
-        discountBlackFriday.setIdDiscontBlackFriday(1L);
-
-        Throwable exceptionThatWasThrown = assertThrows(Exception.class, () -> {
-            discountBlackFridayService.updateDiscontBlackFriday(dto, 3L);
-        });
-
-        assertEquals(exceptionThatWasThrown.getMessage(), "Falha ao atualizar, Id DiscontBlack não cadastrado");
-    }
 
     @Test
     void deleteDiscontBlackFridayTestNoSuccess() throws Exception {

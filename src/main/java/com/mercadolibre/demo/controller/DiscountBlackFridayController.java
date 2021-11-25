@@ -45,16 +45,6 @@ public class DiscountBlackFridayController implements SecurityController {
         return new ResponseEntity(discontsBlackFriday, HttpStatus.OK);
     }
 
-    @PutMapping(value = "/update/{id}")
-    public ResponseEntity<DiscountBlackFriday> updateBuyer(@Valid @RequestBody DiscountBlackFridayDTO dto, @PathVariable Long id) throws Exception {
-        try {
-            DiscountBlackFriday discountBlackFriday = discountBlackFridayService.updateDiscontBlackFriday(dto, id);
-            return new ResponseEntity<>(discountBlackFriday, HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
-        }
-    }
-
     @DeleteMapping(value = "/delete/{id}")
     public ResponseEntity<DiscountBlackFriday> deleteCupom(@PathVariable Long id) {
         try {
