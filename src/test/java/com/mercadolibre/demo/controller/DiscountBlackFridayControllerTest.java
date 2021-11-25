@@ -110,26 +110,7 @@ public class DiscountBlackFridayControllerTest {
 
     }
 
-    @Test
-    public void testUpdateDiscountBlackFriday() throws Exception {
 
-        uri = new URI("/api/v1/fresh-products/cupom-black-friday/update/2");
-
-        assertNotNull(uri);
-
-        String requestJson = "{\"cuponsBlackFriday\": \"FRIOSBLACK\",\"cupomValue\": \"25%\",\"idSeller\":2}";
-
-        MvcResult result = mockMvc.perform(
-                MockMvcRequestBuilders.put(uri)
-                        .content(requestJson)
-                        .header("Content-Type", "application/json")
-                        .header("Authorization", tokenDTO.getTipo() + " " + tokenDTO.getToken()))
-                .andExpect(status().isCreated()).andReturn();
-
-        String responseJson = result.getResponse().getContentAsString();
-
-        assertNotNull(responseJson);
-    }
     @Test
     public void testDeleteDiscountBlackFridayNoSuccess() throws Exception {
 
