@@ -20,5 +20,11 @@ public class DiscountBlackFridayDTO {
     private String cupomValue;
     private Long idSeller;
     private List<SalesAdDTOResponse> salesAdList;
+
+    public DiscountBlackFridayDTO(CuponsBlackFriday cuponsBlackFriday, String cupomValue, Long idSeller) {
+        this.cuponsBlackFriday = cuponsBlackFriday;
+        this.cupomValue = cupomValue;
+        this.idSeller = idSeller;
+    }
 }
 

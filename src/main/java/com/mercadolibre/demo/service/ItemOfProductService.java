@@ -1,6 +1,5 @@
 package com.mercadolibre.demo.service;
 
-
 import com.mercadolibre.demo.dto.ItemOfProductDTO;
 import com.mercadolibre.demo.dto.response.ProductInBatchStockDTO;
 import com.mercadolibre.demo.dto.response.ProductInBathDTO;
@@ -22,14 +21,12 @@ import java.util.stream.Collectors;
 
 @Service
 public class ItemOfProductService {
-
     private ItemOfProductRepository itemOfProductRepository;
     private SalesAdRepository salesAdRepository;
     private PurchaseOrderRepository purchaseOrderRepository;
     private BatchStockRepository batchStockRepository;
     private InboundOrderRepository inboundOrderRepository;
-    private ItemOfProduct itemOfProduct;
-    private InboundOrderService inboundOrderService;
+
 
     @Autowired
     public ItemOfProductService(ItemOfProductRepository itemOfProductRepository, SalesAdRepository salesAdRepository,
@@ -73,25 +70,25 @@ public class ItemOfProductService {
         }
     }
 
-    public List<ItemOfProduct> resetCart (Long id) throws Exception {
+    public List<ItemOfProduct> resetCart(Long id) throws Exception {
 
         List<ItemOfProduct> lista = itemOfProductRepository.orderOfItem(id);
 
         if (purchaseOrderRepository.findById(id).isPresent()) {
-        	 for (ItemOfProduct item : lista) {
-                 List<BatchStock> batchStockList = batchStockRepository.batchStockList(item.getSalesAd().getId());
-                 if (batchStockList != null) {
-                     incrementQuantity(item, batchStockList);
-                     item.setQuantity(0L);
-                     itemOfProductRepository.saveAndFlush(item);
-                 }
-             }
-             return lista;
+            for (ItemOfProduct item : lista) {
+                List<BatchStock> batchStockList = batchStockRepository.batchStockList(item.getSalesAd().getId());
+                if (batchStockList != null) {
+                    incrementQuantity(item, batchStockList);
+                    item.setQuantity(0L);
+                    itemOfProductRepository.saveAndFlush(item);
+                }
+            }
+            return lista;
         } else {
             throw new Exception("Id do carrinho não cadastrado");
         }
-        
-       
+
+
     }
 
     public List<ProductInBatchStockDTO> listProductOfBatchStock() {

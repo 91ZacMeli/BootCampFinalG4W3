@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -52,7 +51,7 @@ public class DiscountBlackFridayController implements SecurityController {
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    public ResponseEntity<DiscountBlackFriday> deleteCupom(@PathVariable Long id) throws Exception {
+    public ResponseEntity<DiscountBlackFriday> deleteCupom(@PathVariable Long id) {
         try {
             discountBlackFridayService.deleteDiscontBlackFriday(id);
             return new ResponseEntity("Cupom " + id + " deletado com sucesso", HttpStatus.OK);

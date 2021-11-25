@@ -8,10 +8,6 @@ import com.mercadolibre.demo.model.*;
 import com.mercadolibre.demo.repository.*;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,10 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 
-@Transactional
-@AutoConfigureTestEntityManager
-@SpringBootTest
-@AutoConfigureMockMvc
 public class ItemOfProductServiceTest {
 
 	ItemOfProductRepository mockItemOfProductRepository = Mockito.mock(ItemOfProductRepository.class);

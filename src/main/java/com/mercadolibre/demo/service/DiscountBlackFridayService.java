@@ -80,16 +80,19 @@ public class DiscountBlackFridayService {
             discountBlackFriday.setIdDiscontBlackFriday(id);
             return discountBlackFridayRepoitory.saveAndFlush(discountBlackFriday);
         } else {
-            throw new Exception("Id DiscontBlack não cadastrado");
+            throw new Exception("Falha ao atualizar, Id DiscontBlack não cadastrado");
         }
     }
 
-    public String deleteDiscontBlackFriday(Long id) {
+    public String deleteDiscontBlackFriday(Long id) throws Exception {
         Optional<DiscountBlackFriday> existDiscontBlack = findById(id);
         if (existDiscontBlack.isPresent()) {
             discountBlackFridayRepoitory.deleteById(id);
+            return "O cupom com o ID " + id + " Foi excluído com sucesso ";
+        }else {
+            throw new Exception("Falha ao deletar, Id DiscontBlack não cadastrado");
         }
-        return "O cupom com o ID " + id + " Foi excluído com sucesso ";
+
     }
 
     public DiscountBlackFriday convertDiscountBlackFridayDTO(DiscountBlackFridayDTO dto) {
