@@ -73,17 +73,6 @@ public class DiscountBlackFridayService {
     public Optional<DiscountBlackFriday> findById(Long id) {
         return discountBlackFridayRepoitory.findById(id);
     }
-    public DiscountBlackFriday updateDiscontBlackFriday(DiscountBlackFridayDTO dto, Long id) throws Exception {
-        Optional<DiscountBlackFriday> existDiscontBlack = findById(id);
-        if (existDiscontBlack.isPresent()) {
-            DiscountBlackFriday discountBlackFriday = convertDiscountBlackFridayDTO(dto);
-            discountBlackFriday.setIdDiscontBlackFriday(id);
-            return discountBlackFridayRepoitory.saveAndFlush(discountBlackFriday);
-        } else {
-            throw new Exception("Falha ao atualizar, Id DiscontBlack não cadastrado");
-        }
-    }
-
     public String deleteDiscontBlackFriday(Long id) throws Exception {
         Optional<DiscountBlackFriday> existDiscontBlack = findById(id);
         if (existDiscontBlack.isPresent()) {
