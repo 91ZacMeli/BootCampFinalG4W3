@@ -1,7 +1,7 @@
 package com.mercadolibre.demo.model;
 
 public enum CuponsBlackFriday {
-    SEMCUPOM,
+    DEFINIRCUPOM,
     FRIOSBLACK,
     CONGELADOSBLACK,
     FRESCOSBLACK

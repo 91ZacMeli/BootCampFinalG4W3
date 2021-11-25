@@ -6,12 +6,13 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+
 @Getter
 @Setter
 @Entity
 @NoArgsConstructor
 @Table(name = "discontBlackFriday")
-public class DiscontBlackFriday {
+public class DiscountBlackFriday {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -20,21 +21,17 @@ public class DiscontBlackFriday {
     private Long idDiscontBlackFriday;
 
     @Column(name = "cupomName", nullable = false)
-    private CuponsBlackFriday cuponsBlackFriday = CuponsBlackFriday.SEMCUPOM;
-
-    @Column(name = "valueOfCart", nullable = false)
-    private Double valueOfCart;
+    private String cuponsBlackFriday;
 
     @Column(name = "cupomValue", nullable = false)
     private String cupomValue;
 
-    @Column(name = "valueWithDescont", nullable = false)
-    private Double valueWithDescont;
+    @Column(name = "idSeller", nullable = false)
+    private Long idSeller;
 
-    public DiscontBlackFriday(CuponsBlackFriday cuponsBlackFriday, Double valueOfCart, String cupomValue, Double valueWithDescont) {
+    public DiscountBlackFriday(String cuponsBlackFriday, String cupomValue, Long idSeller) {
         this.cuponsBlackFriday = cuponsBlackFriday;
-        this.valueOfCart = valueOfCart;
         this.cupomValue = cupomValue;
-        this.valueWithDescont = valueWithDescont;
+        this.idSeller = idSeller;
     }
 }
