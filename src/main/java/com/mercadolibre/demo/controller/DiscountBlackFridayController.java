@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -46,8 +47,12 @@ public class DiscountBlackFridayController implements SecurityController {
 
     @PutMapping(value = "/update/{id}")
     public ResponseEntity<DiscountBlackFriday> updateBuyer(@Valid @RequestBody DiscountBlackFridayDTO dto, @PathVariable Long id) throws Exception {
-        DiscountBlackFriday discountBlackFriday = discountBlackFridayService.updateDiscontBlackFriday(dto, id);
-        return new ResponseEntity<>(discountBlackFriday, HttpStatus.CREATED);
+        try {
+            DiscountBlackFriday discountBlackFriday = discountBlackFridayService.updateDiscontBlackFriday(dto, id);
+            return new ResponseEntity<>(discountBlackFriday, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
     }
 
     @DeleteMapping(value = "/delete/{id}")
