@@ -6,11 +6,11 @@ import java.util.Optional;
 import com.mercadolibre.demo.dto.SalesAdDTO;
 import com.mercadolibre.demo.model.*;
 import com.mercadolibre.demo.repository.ProductRepository;
+import com.mercadolibre.demo.repository.SalesAdRepository;
 import com.mercadolibre.demo.repository.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
-
-import com.mercadolibre.demo.repository.SalesAdRepository;
 
 @Service
 public class SalesAdService {

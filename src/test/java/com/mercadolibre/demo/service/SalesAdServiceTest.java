@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.mercadolibre.demo.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import com.mercadolibre.demo.dto.SalesAdDTO;
 import com.mercadolibre.demo.model.Product;
 import com.mercadolibre.demo.model.SalesAd;
 import com.mercadolibre.demo.model.Seller;
-import com.mercadolibre.demo.repository.ProductRepository;
 import com.mercadolibre.demo.repository.SalesAdRepository;
 import com.mercadolibre.demo.repository.SellerRepository;
 

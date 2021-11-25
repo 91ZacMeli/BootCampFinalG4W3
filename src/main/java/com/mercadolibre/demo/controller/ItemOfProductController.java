@@ -52,7 +52,7 @@ public class ItemOfProductController implements SecurityController {
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    public ResponseEntity<String> deletePurchaseOrder(@PathVariable Long id) throws Exception {
+    public ResponseEntity<String> deletePurchaseOrder(@PathVariable Long id){
         try {
             itemOfProductService.resetCart(id);
             return new ResponseEntity<>("Produtos removidos do carrinho com sucesso", HttpStatus.OK);
