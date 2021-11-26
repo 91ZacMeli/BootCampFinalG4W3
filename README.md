@@ -20,9 +20,8 @@ Caso seja seu primeiro contato com a aplicação, siga para o requesito 5.1 para
 
 A aplicação Meli-Frios recebeu mais um upgrade para atender outra necessidade de seus usuários. 
 
-A API de desconto é um micro serviço que chegou para permitir que os vendedores atribuam descontos para nossos clientes, disponibilizando inicialmente os seguintes
 
-cupons:
+A API de desconto é um micro serviço que chegou para permitir que os vendedores atribuam descontos para nossos clientes, disponibilizando inicialmente os seguintes cupons:
 
 
 FRIOSBLACK (15 % de desconto para os produtos da categoria Frios),
