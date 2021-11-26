@@ -45,7 +45,7 @@ public class DiscountBlackFridayControllerTest {
 
     @Test
     public void testAppyDiscountBlackFridayNoSuccess() throws Exception {
-        uri = new URI("/api/v1/fresh-products/cupom-black-friday/applyDiscount?cupomBlackFriday=CONGELADOSBLACK&idSeller=31");
+        uri = new URI("/api/v1/fresh-products/cupom-black-friday/applydiscount?cupomBlackFriday=CONGELADOSBLACK&idSeller=31");
 
         assertNotNull(uri);
 
@@ -61,7 +61,7 @@ public class DiscountBlackFridayControllerTest {
     }
     @Test
     public void testAppyDiscountBlackFriday() throws Exception {
-        uri = new URI("/api/v1/fresh-products/cupom-black-friday/applyDiscount?cupomBlackFriday=CONGELADOSBLACK&idSeller=3");
+        uri = new URI("/api/v1/fresh-products/cupom-black-friday/applydiscount?cupomBlackFriday=FRESCOSBLACK&idSeller=1");
 
         assertNotNull(uri);
 
@@ -96,7 +96,7 @@ public class DiscountBlackFridayControllerTest {
     @Test
     void listEnumsTeste() throws Exception {
 
-        uri = new URI("/api/v1/fresh-products/cupom-black-friday/listEnums");
+        uri = new URI("/api/v1/fresh-products/cupom-black-friday/listcupoms");
 
         assertNotNull(uri);
 
@@ -129,7 +129,7 @@ public class DiscountBlackFridayControllerTest {
     @Test
     public void testDeleteDiscountBlackFriday() throws Exception {
 
-        uri = new URI("/api/v1/fresh-products/cupom-black-friday/delete/2");
+        uri = new URI("/api/v1/fresh-products/cupom-black-friday/delete/1");
 
         assertNotNull(uri);
         MvcResult result = mockMvc.perform(
