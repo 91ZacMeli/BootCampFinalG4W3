@@ -1,10 +1,88 @@
 # Workplace-Meli
 
 
+### Equipe 4 Wave-3-Projeto-Final-Meli-Frios
 
-### Equipe 4 W-3
 
-Requesito 5.1 bootcampw3
+
+Requesito 6 bootcampw3
+
+
+
+API Meli-Frios, O requiisito 6 permite ao vendedor concedor descontos à determinada categoria de produtos.
+
+Caso seja seu primeiro contato com a aplicação, siga para o requesito 5.1 para configurar o local para uso antes de iniciar os testes
+
+
+
+#Discount:
+
+
+A aplicação Meli-Frios recebeu mais um upgrade para atender outra necessidade de seus usuários. 
+
+
+A API de desconto é um micro serviço que chegou para permitir que os vendedores atribuam descontos para nossos clientes, disponibilizando inicialmente os seguintes cupons:
+
+
+FRIOSBLACK (15 % de desconto para os produtos da categoria Frios),
+
+CONGELADOSBLACK (20 % de desconto para os produtos da categoria Congelados),
+
+FRESCOSBLACK (25 % de desconto para os produtos da categoria Ambiente),
+
+
+#Discount - POST
+
+
+Usando o swagger e estando autenticado, selecione a opção POST para autorizar um desconto informando um cupom e o ID do Seller
+
+Link para uso:
+
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/discount-black-friday-controller/registerDiscount
+
+
+
+
+#Discount - GET (Cupons Disponíveis) 
+
+
+Usando o swagger e estando autenticado, selecione o segundo GET para listar os cupons pré definidos.
+
+1#Selecione o Cupom que deseja autorizar
+
+2# Insira o ID do Seller.
+
+
+Link para uso:
+
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/discount-black-friday-controller/listEnums
+
+
+
+#Discount - GET (Cupons Cadastrados) 
+
+
+Usando o swagger e estando autenticado, selecione o primeiro GET para listar todos os cupons já autorizados juntamente com o id do vendedor que os autorizou.
+
+Link para uso:
+
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/discount-black-friday-controller/listDiscounts
+
+
+
+#Discount - DELETE
+
+
+Usando o swagger e estando autenticado, selecione o DELETE para cancelar um dos cupons e informe o Id do cipom cadastrado para excluir o desconto do anúncio.
+
+Link para uso:
+
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/discount-black-friday-controller/deleteCupom
+
+
+
+
+#Requesito 5.1 bootcampw3
 
 
 
@@ -36,7 +114,7 @@ spring.datasource.password	/*senha*/
 
 
 
-***INSERT** **into** users (username ,**password** )**values**('thiago','$2a$10$nuNzCf8js96QGhe53QeBTu3PEBcJV1sCY9xuE47kTIIAvSgzm8fYy');*
+***INSERT** **into** users (username ,**password** )**values**('isac','$2a$10$nuNzCf8js96QGhe53QeBTu3PEBcJV1sCY9xuE47kTIIAvSgzm8fYy');*
 
 ***UPDATE** users **set** enabled=**TRUE**;*
 
@@ -58,7 +136,7 @@ seguindo o exemplo abaixo de usuário teste, use para se registrar no banco:
 
 ```
 {
-  "user": "thiago",
+  "user": "isac",
   "senha": "123"
 }
 ```
