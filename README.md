@@ -3,20 +3,27 @@
 
 ### Equipe 4 Wave-3-Projeto-Final-Meli-Frios
 
+
+
 Requesito 6 bootcampw3
+
+
 
 API Meli-Frios, O requiisito 6 permite ao vendedor concedor descontos à determinada categoria de produtos.
 
 Caso seja seu primeiro contato com a aplicação, siga para o requesito 5.1 para configurar o local para uso antes de iniciar os testes
 
 
+
 #Discount:
+
 
 A aplicação Meli-Frios recebeu mais um upgrade para atender outra necessidade de seus usuários. 
 
 A API de desconto é um micro serviço que chegou para permitir que os vendedores atribuam descontos para nossos clientes, disponibilizando inicialmente os seguintes
 
 cupons:
+
 
 FRIOSBLACK (15 % de desconto para os produtos da categoria Frios),
 
@@ -26,6 +33,7 @@ FRESCOSBLACK (25 % de desconto para os produtos da categoria Ambiente),
 
 
 #Discount - POST
+
 
 Usando o swagger e estando autenticado, selecione a opção POST para autorizar um desconto informando um cupom e o ID do Seller
 
@@ -37,6 +45,7 @@ http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-confi
 
 
 #Discount - GET (Cupons Disponíveis) 
+
 
 Usando o swagger e estando autenticado, selecione o segundo GET para listar os cupons pré definidos.
 
@@ -53,6 +62,7 @@ http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-confi
 
 #Discount - GET (Cupons Cadastrados) 
 
+
 Usando o swagger e estando autenticado, selecione o primeiro GET para listar todos os cupons já autorizados juntamente com o id do vendedor que os autorizou.
 
 Link para uso:
@@ -62,6 +72,7 @@ http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-confi
 
 
 #Discount - DELETE
+
 
 Usando o swagger e estando autenticado, selecione o DELETE para cancelar um dos cupons e informe o Id do cipom cadastrado para excluir o desconto do anúncio.
 
