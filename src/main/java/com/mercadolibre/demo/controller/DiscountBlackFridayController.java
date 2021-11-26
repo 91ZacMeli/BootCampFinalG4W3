@@ -20,7 +20,7 @@ public class DiscountBlackFridayController implements SecurityController {
     @Autowired
     DiscountBlackFridayService discountBlackFridayService;
 
-    @PostMapping("/applyDiscount")
+    @PostMapping("/applydiscount")
     @ResponseBody
     public ResponseEntity<DiscountBlackFridayDTO> registerDiscount(CuponsBlackFriday cupomBlackFriday, Long idSeller) {
         try {
@@ -38,7 +38,7 @@ public class DiscountBlackFridayController implements SecurityController {
         return new ResponseEntity(discontsBlackFriday, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/listEnums")
+    @GetMapping(value = "/listcupoms")
     @ResponseBody
     public ResponseEntity<List<DiscountBlackFridayDTO>> listEnums() {
         List<CuponsBlackFriday> discontsBlackFriday = discountBlackFridayService.listAllEnums();
